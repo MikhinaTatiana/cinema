@@ -10,8 +10,6 @@ int maxDistToClosest(vector<int>& seats) {
 
     for (int i = 0; i < seats.size(); i++) {
         if (seats[i] == 1) {
-
-            // если это первое занятое место
             if (last == -1)
                 ans = i;
             else
@@ -20,8 +18,6 @@ int maxDistToClosest(vector<int>& seats) {
             last = i;
         }
     }
-
-    // свободные места в конце
     ans = max(ans, (int)seats.size() - 1 - last);
 
     return ans;
